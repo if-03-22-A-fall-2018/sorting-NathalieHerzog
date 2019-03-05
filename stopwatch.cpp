@@ -27,5 +27,6 @@ void stop_stopwatch ()
 
 float elapsed_time ()
 {
-  return end - start;
+  end = clock();
+  return((float) (end - start)) / CLOCKS_PER_SEC;
 }

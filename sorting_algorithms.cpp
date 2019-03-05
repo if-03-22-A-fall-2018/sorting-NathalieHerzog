@@ -43,20 +43,17 @@ void 	bubble_sort (int *array, unsigned long length)
 void 	insertion_sort (int *array, unsigned long length)
 {
   int element;
-  int temp;
+  int j;
 
   for(int i = 0; i < length; i++)
   {
     element = array[i];
-
-    for (int u = 0; u < length - i ; u++)
+    j = i;
+    while (j > 0 && array[j] > element)
     {
-        if (element > array[u])
-        {
-            temp = element;
-            element = array[u];
-            array[u] = temp;
-        }
+       array[j+1] = array[j];
+       j--;
     }
+    array[j] = element;
   }
 }
