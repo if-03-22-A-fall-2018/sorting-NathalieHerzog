@@ -10,3 +10,53 @@
  * <your description here>
  *-----------------------------------------------------------------------------
 */
+#include "sorting_algorithms.h"
+
+void 	init_random (int *array, unsigned long length)
+{
+  int random = 0;
+
+  for(int i = 0; i < length; i++)
+  {
+    array[i] = random;
+  }
+}
+
+void 	bubble_sort (int *array, unsigned long length)
+{
+  int temp;
+
+   for (int i = 1; i < length ; i++)
+   {
+      for (int u = 0; u < length - i ; u++)
+      {
+          if (array[u] > array[u + 1])
+          {
+              temp = array[u];
+              array[u] = array[u + 1];
+              array[u + 1] = temp;
+          }
+      }
+   }
+}
+
+void 	insertion_sort (int *array, unsigned long length)
+{
+  int element;
+  int temp;
+
+  for(int i = 0; i < length; i++)
+  {
+    element = array[i];
+
+    for (int u = 0; u < length - i ; u++)
+    {
+        if (element > array[u])
+        {
+            temp = element;
+            element = array[u];
+            array[u] = temp;
+        }
+    }
+  }
+}
