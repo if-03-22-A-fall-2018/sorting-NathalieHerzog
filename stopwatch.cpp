@@ -11,18 +11,21 @@
  *-----------------------------------------------------------------------------
 */
 #include "stopwatch.h"
+#include <time.h>
 
-void 	start_stopwatch ()
+clock_t start, end;
+
+void start_stopwatch ()
 {
-
+  start = clock();
 }
 
-void 	stop_stopwatch ()
+void stop_stopwatch ()
 {
-
+  end = clock();
 }
 
-float 	elapsed_time ()
+float elapsed_time ()
 {
-  return 1;
+  return end - start;
 }
