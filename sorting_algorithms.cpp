@@ -11,14 +11,13 @@
  *-----------------------------------------------------------------------------
 */
 #include "sorting_algorithms.h"
+#include <stdlib.h>
 
 void 	init_random (int *array, unsigned long length)
 {
-  int random = 0;
-
   for(int i = 0; i < length; i++)
   {
-    array[i] = random;
+    array[i] = random();
   }
 }
 
@@ -49,9 +48,9 @@ void 	insertion_sort (int *array, unsigned long length)
   {
     element = array[i];
     j = i;
-    while (j > 0 && array[j] > element)
+    while (j > 0 && element < array[j-1])
     {
-       array[j+1] = array[j];
+       array[j] = array[j - 1];
        j--;
     }
     array[j] = element;
